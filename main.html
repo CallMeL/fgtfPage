@@ -6,8 +6,6 @@
     <style>
         body {
             background-color: white;
-            /* background-image: url('kv-rotate-opacity-50.png');
-            position: relative; */
 
         }
 
@@ -40,7 +38,7 @@
         }
 
         .button {
-            background-color: rgba(255, 255, 255, 0.802);
+            background-color: rgba(216, 218, 219, 0.24);
             border: 2px solid black;
             color: black;
             font-size: 40px;
@@ -48,24 +46,34 @@
             margin: 30px;
             padding: 5% 20%;
             z-index: 1;
-        }
+}
 
-        .button:hover {
-            background-color: rgba(216, 218, 219, 0.24);
-            color: white;
-            animation-name: example;
-            animation-duration: 1s;
-        }
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+ 
+}
 
-        @keyframes example {
-            0% {
-                background-color: transparent;
-            }
+.button span:after {
+  content: '';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  transition: 0.5s;
 
-            100% {
-                background-color: black;
-            }
-        }
+}
+
+.button:hover span {
+
+  border-bottom: 2px solid black;
+}
+
+.button:hover span:after {
+  opacity: 1;
+
+}
 
         .title {
 
@@ -103,24 +111,44 @@
 
         .image {
             position: absolute;
-            top: 0;
+            bottom: 0;
             left: 0;
             width: 100%;
             height: 50%;
-            background-image: url('https://fcpublic.oss-cn-hangzhou.aliyuncs.com/summit/2022/fgtf/kv.jpeg');
-            /* background-image: url('nasa-Q1p7bh3SHj8-unsplash.jpg'); */
+            /* background-image: url('https://fcpublic.oss-cn-hangzhou.aliyuncs.com/summit/2022/fgtf/kv.jpeg'); */
+            background-image: url('nasa-Q1p7bh3SHj8-unsplash.jpg');
             background-size: cover;
             background-position: center;
             z-index: -1;
-            opacity: 0.7;
         }
 
         .image-top {
-            z-index: 1;
+            z-index: 2;
             width: 90%;
             padding: 5%;
-            padding-top: 8%;
+            padding-top: 20%;
         }
+		.left-bar {
+			background-color: #D0D2D3; 
+			position: fixed;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 15%;
+			z-index: -1;
+			border-right: 1px solid #CCCCCC; 
+		}
+
+		.logo-leftcorner {
+			position: absolute;
+            bottom: 0;
+		}
+        .logo-rightcorner {
+			position: absolute;
+            right: 0;
+            z-index: -1;
+            top: -100px;
+		}
 
         @media only screen and (min-width: 1000px) {
             .container {
@@ -167,7 +195,12 @@
 </head>
 
 <body>
+    <div class="left-bar"></div>
 
+
+<img class="logo-leftcorner" src="Asset 4.png" alt="Your logo">
+    <img class="logo-rightcorner" src="Asset 3-flip.png" alt="Your logo">
+    
     <img class="image-top" src="https://fcpublic.oss-cn-hangzhou.aliyuncs.com/summit/2022/fgtf/logo-croped.png"
         alt="Italian Trulli">
 
@@ -175,12 +208,12 @@
     <h2 class="title2">新准则 <br>改变与坚守 </h2>
 <h3 class="title3">3月31日 · 广州</h3>
     <div class="container">
-        <button class="button" onclick="window.open('https://www.fortunechina.com/')">Button 1</button>
-        <button class="button">Button 2</button>
-        <button class="button">Button 3</button>
-        <button class="button">Button 4</button>
+        <button class="button" onclick="window.open('https://www.fortunechina.com/')"><span>在线相册</span></button>
+        <button class="button" onclick="window.open('https://www.fortunechina.com/')"><span>在线直播</span></button>
+        <button class="button" onclick="window.open('https://www.fortunechina.com/caifu_plus/caifu_app.htm')"><span>Plus App</span></button>
+        <button class="button" onclick="window.open('https://www.fortunechina.com/rankings/node_11663.htm')"><span>榜单申报</span></button>
+
     </div>
-    <div class="image"></div>
 
 </body>
 
